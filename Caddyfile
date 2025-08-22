@@ -1,0 +1,41 @@
+{
+	# Config doc - https://caddyserver.com/docs/caddyfile/options
+
+	debug
+
+	# Admin port see https://caddyserver.com/docs/api
+	admin :2019 {
+		origins localhost
+		enforce_origin
+	}
+
+	# Endpoint http://localhost:2019/metrics
+	metrics {
+		per_host
+	}
+
+	log default {
+		output stdout
+		format json
+		include http.log.access admin.api
+	}
+
+	servers {
+		trace
+		max_header_size 5MB
+	}
+
+	frankenphp
+}
+
+localhost {
+	log
+
+	root wordpress/
+
+	encode zstd br gzip
+
+	php_server {
+		try_files {path} index.php
+	}
+}

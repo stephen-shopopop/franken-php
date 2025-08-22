@@ -26,6 +26,12 @@ Access to ```http://localhost```.
 ./frankenphp php-server -r wordpress/ --watch
 ```
 
+## Serve the wordpress/ with CaddyFile
+
+```bash
+./frankenphp php-server run
+```
+
 ## Reference
 
 - [doc wordpres + sqlite](https://www.alexandergoller.com/journal/15074/wordpress-sqlite-db-integration/)
