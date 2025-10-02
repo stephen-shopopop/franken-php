@@ -50,7 +50,7 @@ Watch mode automatically reloads file changes:
 For advanced configuration with Caddy:
 
 ```bash
-./frankenphp php-server run
+./frankenphp run
 ```
 
 This command uses the `Caddyfile` present in the directory to configure the server.
